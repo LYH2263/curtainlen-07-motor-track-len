@@ -1,3 +1,5 @@
+from typing import Optional
+
 from pydantic import BaseModel
 
 class EstimateRequest(BaseModel):
@@ -5,3 +7,6 @@ class EstimateRequest(BaseModel):
     fabric_id: int
     save: bool = False
     note: str = ""
+    motor_track: bool = False
+    ext_left: Optional[float] = None
+    ext_right: Optional[float] = None

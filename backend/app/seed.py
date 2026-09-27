@@ -1,4 +1,5 @@
 from app.db import connect
+from app.modules.motor_track import DEFAULT_EXT
 
 def init_db():
     c = connect()
@@ -20,5 +21,6 @@ def init_db():
             ("脏数据-零门幅",0.0,0.1,0.1,"dirty",""),
         ])
         c.execute("INSERT INTO settings(key,value) VALUES ('default_fullness','2.0')")
-        c.commit()
+    c.execute("INSERT OR IGNORE INTO settings(key,value) VALUES ('default_track_ext',?)", (str(DEFAULT_EXT),))
+    c.commit()
     c.close()
