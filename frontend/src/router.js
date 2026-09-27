@@ -6,6 +6,7 @@ import Fabrics from './pages/Fabrics.vue'
 import Bench from './pages/Bench.vue'
 import Fullness from './pages/Fullness.vue'
 import History from './pages/History.vue'
+import RunDetail from './pages/RunDetail.vue'
 import Settings from './pages/Settings.vue'
 export default createRouter({
   history: createWebHistory(),
@@ -17,6 +18,7 @@ export default createRouter({
     { path: '/bench', component: Bench },
     { path: '/fullness', component: Fullness },
     { path: '/history', component: History },
+    { path: '/runs/:id', component: RunDetail, props: true },
     { path: '/settings', component: Settings },
   ],
 })

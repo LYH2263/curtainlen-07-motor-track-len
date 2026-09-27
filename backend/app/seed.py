@@ -21,4 +21,6 @@ def init_db():
         ])
         c.execute("INSERT INTO settings(key,value) VALUES ('default_fullness','2.0')")
         c.commit()
+    c.execute("INSERT OR IGNORE INTO settings(key,value) VALUES ('default_track_ext','0.2')")
+    c.commit()
     c.close()
